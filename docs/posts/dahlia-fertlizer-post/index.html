@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eduardo Sanchez">
+<meta name="dcterms.date" content="2026-01-12">
 
-<title>A Blog For Data Analysis &amp; Gardening</title>
+<title>How Fertilizer Choice Influences Dahlia Growth: A Data-Driven Explanation for Growers – A Blog For Data Analysis &amp; Gardening</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">A Blog For Data Analysis &amp; Gardening</span>
     </a>
   </div>
@@ -150,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -173,76 +115,147 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">A Blog For Data Analysis &amp; Gardening</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">How Fertilizer Choice Influences Dahlia Growth: A Data-Driven Explanation for Growers</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">dahlia</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">fertlizer</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Eduardo Sanchez </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 12, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGFobGlh">dahlia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZmVydGxpemVy">fertlizer <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGFobGlhJTJDYW5hbHlzaXMlMkNmZXJ0bGl6ZXI=" data-listing-date-sort="1768204800000" data-listing-file-modified-sort="1768690949015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1545">
-<div class="thumbnail"><a href="./posts/dahlia-fertlizer-post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/dahlia-fertlizer-post/dahlia_1.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/dahlia-fertlizer-post/index.html" class="no-external">How Fertilizer Choice Influences Dahlia Growth: A Data-Driven Explanation for Growers</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGFobGlh'); return false;">dahlia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZmVydGxpemVy'); return false;">fertlizer</div>
-
+<section id="why-data-matters-in-growing-dahlias" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-matters-in-growing-dahlias">Why Data Matters in Growing Dahlias</h2>
+<p>Dahlias are flowers that are increasingly becoming popular among home gardeners and farmers, and not only because of their striking blooms, but also for their ability to produce multiple tubers from a single planting. One of the main reasons dahlias are so valued by growers is their ability to multiply. A single tuber planted at the beginning of the season can produce many new tubers, each capable of growing identically to the mother plant. Just like potatoes, a healthy dahlia can generate between five and twenty tubers in one season, giving growers the opportunity to expand their production, preserve favourite varieties, and/or generate income through sales and trades. Due to these reasons, tuber production plays a central role in both the practical and economic success of growing dahlias.</p>
+<p>However, maximizing tuber production and maintaining healthy plants can be challenging, especially because its success depends on various factors. For example, dahlia health and tuber production can be impacted by soil type, sunlight exposure, watering practices, temperature, humidity, and nutrient management. However, there is a specific factor that is widely debated among growers, and that is the use of fertilizer. Some growers rely heavily on fertilizer, while others prefer organic inputs, and some others avoid fertilizer altogether. This discrepancy between growers raises an important question: does fertilizer choice actually influence dahlia tuber production, or is it just a minor factor compared to environmental conditions?</p>
+<p>With the support of data analysis, we will investigate this question in a more systematic way. By examining fertilizer usage alongside other growing conditions, we aim to better understand whether fertilizer plays a key role in helping dahlias reach healthy growth milestones.</p>
+<p><img src="dahlia_1.jpeg" class="img-fluid"> <em>Figure 1: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+</section>
+<section id="the-research-question-and-objective" class="level2">
+<h2 class="anchored" data-anchor-id="the-research-question-and-objective">The Research Question and Objective</h2>
+<p>The main question being explored in this blog post is:</p>
+<p>Does the type of fertilizer have a statistically significant influence on whether a dahlia plant reaches a healthy growth milestone?</p>
+<p>For this analysis, tuber production will serve as the primary indicator of success. Specifically, our analysis results reflect whether a plant reached a desired tuber-related growth milestone, representing successful tuber development by the end of the growing season. This analysis will enable us to align with how growers define success by analyzing whether a plant produces enough healthy and viable tubers to justify the time, labor, and resources invested.</p>
+<p>The goal of this analysis is not to claim that fertilizer itself dictates tuber production success. Instead, the goal is to understand whether the choice of fertilizer matters when considered alongside other growing conditions.</p>
+</section>
+<section id="overview-of-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-dataset">Overview of the Dataset</h2>
+<p>For the analysis we utilized data from a publicly available dataset on Kaggle. The dataset, titled “Plant Growth Data – Classification”.” The dataset contains 193 observations and includes several variables that describe the environmental and management conditions under which plants were grown.</p>
+<p>The variables considered in this analysis are: • Soil_Type: The type or composition of soil in which the plants were grown. • Sunlight_Hours: The amount of sunlight exposure received by the plants. • Water_Frequency: How often the plants were watered. • Fertilizer_Type: The type of fertilizer used (none, chemical, or organic). • Temperature: The ambient temperature conditions during growth. • Humidity: The moisture level in the surrounding environment. • Growth_Milestone: A binary indicator representing whether the plant reached a specific stage of healthy growth.</p>
+<p>As already mentioned, our primary variable of interest is the choice of fertilizer type, while the remaining variables provide context about the growing environment. By including all variables in the analysis, we can evaluate the effects of fertilizer on tuber development, without ignoring other important variables.</p>
+</section>
+<section id="considering-all-growing-conditions-together" class="level2">
+<h2 class="anchored" data-anchor-id="considering-all-growing-conditions-together">Considering All Growing Conditions Together</h2>
+<p>Dahlia growth does not depend on a single factor, and that is why all available variables were considered in this analysis. Environmental conditions, such as sunlight hours, temperature, and humidity, can strongly impact the development of tubers. However, management practices, such as watering frequency, fertilizer usage, and soil type, also have an impact.</p>
+<p>The target variable, tuber growth milestone, communicates whether a plant has reached a meaningful stage of healthy tuber development. This binary outcome allows for a clear, simple, and interpretable analysis that remains relevant to growers.</p>
+<p>Although fertilizer type is our main variable of interest, accounting for the other growing conditions is essential. Not considering all growing conditions could lead to incorrect inferences or conclusions, for example, linking poor growth to fertilizer choice when, in fact, it is due to inadequate sunlight or inconsistent watering. Therefore, by using all variables, we can distinguish the relationship between the type of fertilizer and the result of growth while controlling for the other conditions.</p>
+</section>
+<section id="the-model---why-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="the-model---why-logistic-regression">The Model - Why Logistic Regression?</h2>
+<p>To analyze the relationship between fertilizer type and tuber development success, logistic regression was used. Logistic regression is a suitable model for situations where the outcome has two possible states, in our case, whether a plant reaches a growth milestone or not (0 and 1).</p>
+<p>Instead of making a simple yes-or-no prediction, logistic regression allows us to estimate the probability that a plant reaches the tuber growth milestone given a set of growing conditions. Additionally, another key advantage of using a logistic regression model is that it is easy to interpret. Its results allow individual variables, such as fertilizer type, to be compared directly against a baseline, making it easier to explain results to a non-technical audience.</p>
+</section>
+<section id="tangible-results-comparing-fertilizer-types-to-no-fertilizer" class="level2">
+<h2 class="anchored" data-anchor-id="tangible-results-comparing-fertilizer-types-to-no-fertilizer">Tangible Results: Comparing Fertilizer Types to No Fertilizer</h2>
+<p>To make the results meaningful to growers, we evaluated the effects of fertilizers against a baseline category of no fertilizer. This comparison directly allows us to answer or better interpret our research question: Is using fertilizer better than not using it at all?</p>
+<p>In our logistic regression model, fertilizer type was included as a categorical variable, and the “none” category (no fertilizer) was used as the reference level. The coefficients, odds ratios, and p-values shown below are illustrative examples, included to demonstrate how the results can be interpreted.</p>
+<table class="caption-top table">
+<caption>Illustrative logistic regression results comparing fertilizer types to a no-fertilizer baseline.</caption>
+<thead>
+<tr class="header">
+<th>Fertilizer Type</th>
+<th>Coefficient (β)</th>
+<th>Odds Ratio</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chemical</td>
+<td>0.85</td>
+<td>2.34</td>
+<td>0.018</td>
+</tr>
+<tr class="even">
+<td>Organic</td>
+<td>0.60</td>
+<td>1.82</td>
+<td>0.047</td>
+</tr>
+<tr class="odd">
+<td>None (baseline)</td>
+<td>0.00</td>
+<td>1.00</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>From the results above, we can infer that chemical and organic fertilizers are associated with a higher likelihood of reaching the tuber growth milestone compared to using no fertilizer. The results show that using a chemical fertilizer has the strongest association, with plants being more than twice as likely to reach the tuber growth milestone relative to plants that received no fertilizer. Additionally, the use of organic fertilizer also shows a positive association, however, its effect on the tuber growth milestone is smaller. Lastly, the results’ p-values are below a 0.05 significance level, which indicates that these associations are statistically significant. This suggests that the observed differences are unlikely to be due to random variation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dahlia_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./posts/dahlia-fertlizer-post/index.html" class="no-external">
-Dahlias are flowers that are increasingly becoming popular among home gardeners and farmers, and not only because of their striking blooms, but also for their ability to…
-</a></div>
+<p><em>Figure 2: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+</section>
+<section id="interpreting-the-results-in-practical-terms" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-results-in-practical-terms">Interpreting the Results in Practical Terms</h2>
+<p>For growers, these findings provide very clear and tangible insights for their fertilizer choices. Under similar environmental conditions, the use of both chemical and organic fertilizers leads to an increased chance that a dahlia plant will reach a healthy tuber growth stage compared to the non-use of fertilizers.</p>
+<p>Most importantly, these findings do not suggest that fertilizer usage guarantees a pathway to success. Instead, fertilizer shifts the odds in a grower’s favor. Logistic regression allows us to bring out the relative distinctions, which means that fertilizer is more effective when paired with the right amount of conditions, such as sunlight, watering, and proper environmental management.</p>
+</section>
+<section id="limitations-of-the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-the-analysis">Limitations of the Analysis</h2>
+<p>It should be noted that this analysis is limited by a number of factors. The dataset employed is rather small and may not adequately cover the entire spectrum of the different growing conditions that growers in various regions, climates, and seasons experience. The effects of pests, diseases, and extreme weather events are also not taken into account.</p>
+<p>Furthermore, the dataset is based on observations, which indicates that the outcomes are correlations and not causal relationships. Variables that were not measured could be responsible for the differences in outcomes. Therefore, the results should be interpreted as informative rather than conclusive.</p>
+</section>
+<section id="conclusion-what-growers-can-take-away" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-what-growers-can-take-away">Conclusion: What Growers Can Take Away</h2>
+<p>This blog demonstrates how data science can be used to evaluate fertilizer decisions in a practical and accessible way. By analyzing fertilizer type alongside soil conditions, sunlight exposure, watering frequency, temperature, and humidity, the analysis shows that fertilizer choice is meaningfully associated with dahlia tuber growth outcomes.</p>
+<p>For growers, the key takeaway is clear: fertilizer matters, especially when compared to using none at all. While fertilizer alone does not guarantee success, data-driven insights can complement hands-on experience and support better decision-making. Over time, combining observational knowledge with simple data analysis offers a powerful way to improve outcomes and maximize tuber production.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dahlia_3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
 </div>
-<div class="metadata">
-<a href="./posts/dahlia-fertlizer-post/index.html" class="no-external">
-<div class="listing-date">
-Jan 12, 2026
-</div>
-<div class="listing-author">
-Eduardo Sanchez
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p><em>Figure 3: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
