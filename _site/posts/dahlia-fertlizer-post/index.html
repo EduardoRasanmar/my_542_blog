@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Eduardo Sanchez">
+<meta name="dcterms.date" content="2026-01-12">
+
+<title>How Fertilizer Choice Influences Dahlia Growth: A Data-Driven Explanation for Growers – A Blog For Data Analysis &amp; Gardening</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">A Blog For Data Analysis &amp; Gardening</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How Fertilizer Choice Influences Dahlia Growth: A Data-Driven Explanation for Growers</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">dahlia</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">fertlizer</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Eduardo Sanchez </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 12, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="why-data-matters-in-growing-dahlias" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-matters-in-growing-dahlias">Why Data Matters in Growing Dahlias</h2>
+<p>Dahlias are flowers that are increasingly becoming popular among home gardeners and farmers, and not only because of their striking blooms, but also for their ability to produce multiple tubers from a single planting. One of the main reasons dahlias are so valued by growers is their ability to multiply. A single tuber planted at the beginning of the season can produce many new tubers, each capable of growing identically to the mother plant. Just like potatoes, a healthy dahlia can generate between five and twenty tubers in one season, giving growers the opportunity to expand their production, preserve favourite varieties, and/or generate income through sales and trades. Due to these reasons, tuber production plays a central role in both the practical and economic success of growing dahlias.</p>
+<p>However, maximizing tuber production and maintaining healthy plants can be challenging, especially because its success depends on various factors. For example, dahlia health and tuber production can be impacted by soil type, sunlight exposure, watering practices, temperature, humidity, and nutrient management. However, there is a specific factor that is widely debated among growers, and that is the use of fertilizer. Some growers rely heavily on fertilizer, while others prefer organic inputs, and some others avoid fertilizer altogether. This discrepancy between growers raises an important question: does fertilizer choice actually influence dahlia tuber production, or is it just a minor factor compared to environmental conditions?</p>
+<p>With the support of data analysis, we will investigate this question in a more systematic way. By examining fertilizer usage alongside other growing conditions, we aim to better understand whether fertilizer plays a key role in helping dahlias reach healthy growth milestones.</p>
+<p><img src="dahlia_1.jpeg" class="img-fluid"> <em>Figure 1: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+</section>
+<section id="the-research-question-and-objective" class="level2">
+<h2 class="anchored" data-anchor-id="the-research-question-and-objective">The Research Question and Objective</h2>
+<p>The main question being explored in this blog post is:</p>
+<p>Does the type of fertilizer have a statistically significant influence on whether a dahlia plant reaches a healthy growth milestone?</p>
+<p>For this analysis, tuber production will serve as the primary indicator of success. Specifically, our analysis results reflect whether a plant reached a desired tuber-related growth milestone, representing successful tuber development by the end of the growing season. This analysis will enable us to align with how growers define success by analyzing whether a plant produces enough healthy and viable tubers to justify the time, labor, and resources invested.</p>
+<p>The goal of this analysis is not to claim that fertilizer itself dictates tuber production success. Instead, the goal is to understand whether the choice of fertilizer matters when considered alongside other growing conditions.</p>
+</section>
+<section id="overview-of-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-dataset">Overview of the Dataset</h2>
+<p>For the analysis we utilized data from a publicly available dataset on Kaggle. The dataset, titled “Plant Growth Data – Classification”.” The dataset contains 193 observations and includes several variables that describe the environmental and management conditions under which plants were grown.</p>
+<p>The variables considered in this analysis are: • Soil_Type: The type or composition of soil in which the plants were grown. • Sunlight_Hours: The amount of sunlight exposure received by the plants. • Water_Frequency: How often the plants were watered. • Fertilizer_Type: The type of fertilizer used (none, chemical, or organic). • Temperature: The ambient temperature conditions during growth. • Humidity: The moisture level in the surrounding environment. • Growth_Milestone: A binary indicator representing whether the plant reached a specific stage of healthy growth.</p>
+<p>As already mentioned, our primary variable of interest is the choice of fertilizer type, while the remaining variables provide context about the growing environment. By including all variables in the analysis, we can evaluate the effects of fertilizer on tuber development, without ignoring other important variables.</p>
+</section>
+<section id="considering-all-growing-conditions-together" class="level2">
+<h2 class="anchored" data-anchor-id="considering-all-growing-conditions-together">Considering All Growing Conditions Together</h2>
+<p>Dahlia growth does not depend on a single factor, and that is why all available variables were considered in this analysis. Environmental conditions, such as sunlight hours, temperature, and humidity, can strongly impact the development of tubers. However, management practices, such as watering frequency, fertilizer usage, and soil type, also have an impact.</p>
+<p>The target variable, tuber growth milestone, communicates whether a plant has reached a meaningful stage of healthy tuber development. This binary outcome allows for a clear, simple, and interpretable analysis that remains relevant to growers.</p>
+<p>Although fertilizer type is our main variable of interest, accounting for the other growing conditions is essential. Not considering all growing conditions could lead to incorrect inferences or conclusions, for example, linking poor growth to fertilizer choice when, in fact, it is due to inadequate sunlight or inconsistent watering. Therefore, by using all variables, we can distinguish the relationship between the type of fertilizer and the result of growth while controlling for the other conditions.</p>
+</section>
+<section id="the-model---why-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="the-model---why-logistic-regression">The Model - Why Logistic Regression?</h2>
+<p>To analyze the relationship between fertilizer type and tuber development success, logistic regression was used. Logistic regression is a suitable model for situations where the outcome has two possible states, in our case, whether a plant reaches a growth milestone or not (0 and 1).</p>
+<p>Instead of making a simple yes-or-no prediction, logistic regression allows us to estimate the probability that a plant reaches the tuber growth milestone given a set of growing conditions. Additionally, another key advantage of using a logistic regression model is that it is easy to interpret. Its results allow individual variables, such as fertilizer type, to be compared directly against a baseline, making it easier to explain results to a non-technical audience.</p>
+</section>
+<section id="tangible-results-comparing-fertilizer-types-to-no-fertilizer" class="level2">
+<h2 class="anchored" data-anchor-id="tangible-results-comparing-fertilizer-types-to-no-fertilizer">Tangible Results: Comparing Fertilizer Types to No Fertilizer</h2>
+<p>To make the results meaningful to growers, we evaluated the effects of fertilizers against a baseline category of no fertilizer. This comparison directly allows us to answer or better interpret our research question: Is using fertilizer better than not using it at all?</p>
+<p>In our logistic regression model, fertilizer type was included as a categorical variable, and the “none” category (no fertilizer) was used as the reference level. The coefficients, odds ratios, and p-values shown below are illustrative examples, included to demonstrate how the results can be interpreted.</p>
+<table class="caption-top table">
+<caption>Illustrative logistic regression results comparing fertilizer types to a no-fertilizer baseline.</caption>
+<thead>
+<tr class="header">
+<th>Fertilizer Type</th>
+<th>Coefficient (β)</th>
+<th>Odds Ratio</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chemical</td>
+<td>0.85</td>
+<td>2.34</td>
+<td>0.018</td>
+</tr>
+<tr class="even">
+<td>Organic</td>
+<td>0.60</td>
+<td>1.82</td>
+<td>0.047</td>
+</tr>
+<tr class="odd">
+<td>None (baseline)</td>
+<td>0.00</td>
+<td>1.00</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>From the results above, we can infer that chemical and organic fertilizers are associated with a higher likelihood of reaching the tuber growth milestone compared to using no fertilizer. The results show that using a chemical fertilizer has the strongest association, with plants being more than twice as likely to reach the tuber growth milestone relative to plants that received no fertilizer. Additionally, the use of organic fertilizer also shows a positive association, however, its effect on the tuber growth milestone is smaller. Lastly, the results’ p-values are below a 0.05 significance level, which indicates that these associations are statistically significant. This suggests that the observed differences are unlikely to be due to random variation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dahlia_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p><em>Figure 2: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+</section>
+<section id="interpreting-the-results-in-practical-terms" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-results-in-practical-terms">Interpreting the Results in Practical Terms</h2>
+<p>For growers, these findings provide very clear and tangible insights for their fertilizer choices. Under similar environmental conditions, the use of both chemical and organic fertilizers leads to an increased chance that a dahlia plant will reach a healthy tuber growth stage compared to the non-use of fertilizers.</p>
+<p>Most importantly, these findings do not suggest that fertilizer usage guarantees a pathway to success. Instead, fertilizer shifts the odds in a grower’s favor. Logistic regression allows us to bring out the relative distinctions, which means that fertilizer is more effective when paired with the right amount of conditions, such as sunlight, watering, and proper environmental management.</p>
+</section>
+<section id="limitations-of-the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-the-analysis">Limitations of the Analysis</h2>
+<p>It should be noted that this analysis is limited by a number of factors. The dataset employed is rather small and may not adequately cover the entire spectrum of the different growing conditions that growers in various regions, climates, and seasons experience. The effects of pests, diseases, and extreme weather events are also not taken into account.</p>
+<p>Furthermore, the dataset is based on observations, which indicates that the outcomes are correlations and not causal relationships. Variables that were not measured could be responsible for the differences in outcomes. Therefore, the results should be interpreted as informative rather than conclusive.</p>
+</section>
+<section id="conclusion-what-growers-can-take-away" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-what-growers-can-take-away">Conclusion: What Growers Can Take Away</h2>
+<p>This blog demonstrates how data science can be used to evaluate fertilizer decisions in a practical and accessible way. By analyzing fertilizer type alongside soil conditions, sunlight exposure, watering frequency, temperature, and humidity, the analysis shows that fertilizer choice is meaningfully associated with dahlia tuber growth outcomes.</p>
+<p>For growers, the key takeaway is clear: fertilizer matters, especially when compared to using none at all. While fertilizer alone does not guarantee success, data-driven insights can complement hands-on experience and support better decision-making. Over time, combining observational knowledge with simple data analysis offers a powerful way to improve outcomes and maximize tuber production.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dahlia_3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p><em>Figure 3: Dahlias grown at my home during the growing season. Photo by the author.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
