@@ -5,6 +5,11 @@ project:
 website:
   title: "A Blog For Data Analysis & Gardening"
   navbar:
+    left:
+      - text: "Home"
+        href: index.html
+      - text: "About"
+        href: about.html
     right:
       - about.qmd
       - icon: github
